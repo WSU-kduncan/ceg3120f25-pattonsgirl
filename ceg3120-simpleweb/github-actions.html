@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Actions Cheat Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Actions Cheat Sheet</h1>
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </header>
+
+    <main>
+        <section class="cheatsheet">
+            <h2>Basic Workflow Example</h2>
+<pre><code>name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+</code></pre>
+
+            <h2>Common Actions</h2>
+            <ul>
+                <li><code>actions/checkout</code> – Clone your repo</li>
+                <li><code>actions/setup-node</code> – Setup Node.js environment</li>
+                <li><code>actions/upload-artifact</code> – Save build outputs</li>
+                <li><code>actions/cache</code> – Speed up dependencies</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+
