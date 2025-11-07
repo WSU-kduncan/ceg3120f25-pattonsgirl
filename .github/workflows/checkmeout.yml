@@ -1,0 +1,13 @@
+name: my-first-flow
+on:
+  push:
+    branches: [main]
+    workflow-dispatch:
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
+      - uses: actions/checkout@v5
+      - run: ls
+      - run: echo "Goodbye!"
