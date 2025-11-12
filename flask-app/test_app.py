@@ -21,7 +21,7 @@ def test_index_route_exists(client):
 @patch("app.random.choice")
 def test_index_renders_random_image(mock_choice, mock_render_template, client):
     """Test that the index route renders a template with a random image."""
-    fake_url = "https://example.com/fakecat.gif"
+    fake_url = "https://tenor.com/view/cat-smile-happy-happy-cat-smile-cat-gif-18259408098481512759"
     mock_choice.return_value = fake_url
 
     client.get("/")
